@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiveness</title>
+    <style>
+        /* regole per il mobile */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .img-container {
+            max-width: 700px
+        }
+
+        .box {
+            padding: 1rem;
+        }
+
+        .aqua {
+            background-color: aqua;
+        }
+
+        .coral {
+            background-color: coral;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            padding: 2rem;
+        }
+
+        /* fine regole per il mobile */
+
+        /* inizio regole per schermi medi */
+        /* da 700px fino all'infinito (o fino ad altra regola che sovrascrive questa) */
+        @media screen and (min-width: 700px) {
+            .box {
+                display: inline-block;
+                width: 50%;
+                margin-right: -4px;
+            }
+
+            .img-container {
+                margin-left: auto;
+            }
+        }
+
+        /* inizio regole per schermi desktop */
+        @media screen and (min-width: 1024px) {
+            .img-container {
+                margin-left: unset;
+            }
+        }
+
+        /* inizio regole per schermi xl (grandi) */
+        @media screen and (min-width: 1200px) {
+            .box {
+                display: block;
+                margin-inline: auto;
+            }
+
+            .img-container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        /* questo RANGE ha effetto da 1200px fino a 1399px */
+
+        /* userò un range quando vorrò dare una vita limitata ad una regola CSS (dal breakpoint di 1400px il footer tornerà alla sua condizione di base) */
+
+        @media screen and (min-width: 1200px) and (max-width: 1399px) {
+            footer {
+                max-width: 700px;
+                margin-inline: auto;
+            }
+        }
+
+        /* inizio regole per schermi xxl (molto grandi) */
+        @media screen and (min-width: 1400px) {
+            .img-container {
+                margin-left: unset;
+                margin-right: unset;
+                max-width: unset;
+            }
+
+            .img-container img {
+                height: 48vh;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* inzio regole per la stampa (l'immagine scomparirà e il footer tornerà di colore normale) */
+        @media print {
+            .img-container {
+                display: none;
+            }
+
+            footer {
+                background-color: unset;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-container">
+        <img src="https://images.unsplash.com/photo-1711313525588-c4b9f3ef4847?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="mongolfiere">
+    </div>
+
+    <h1>Titolo principale della pagina</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A illum perferendis commodi ipsam, eaque corrupti optio
+        placeat quas porro, assumenda soluta eius ratione nihil impedit illo culpa esse expedita quia!
+        Accusantium soluta placeat maxime, sequi delectus odio labore, quisquam voluptatum corrupti officiis harum id,
+        laborum iure ex? Molestias quisquam porro aperiam. Reprehenderit rerum accusamus voluptates eius suscipit,
+        tenetur at aut?</p>
+
+    <div class="box aqua">1</div>
+    <div class="box coral">2</div>
+
+    <footer>
+        <span>Epicode 2024&copy;</span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde numquam similique, dicta obcaecati eius veniam
+            ipsa atque aspernatur delectus eos itaque nulla consectetur molestiae minus quam labore provident quisquam
+            corporis.</p>
+        <a href="https://epicode.com">Vai al sito</a>
+
+    </footer>
+</body>
+
+</html>
